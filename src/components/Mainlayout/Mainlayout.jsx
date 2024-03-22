@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
-import Blogpage from "../../pages/Blogpage"
+
 import Navbar from "../Navbar"
+import Footer from "../Footer";
 
 
 function Mainlayout() {
@@ -10,10 +11,13 @@ function Mainlayout() {
             <Navbar></Navbar>
             
         </div>
+        <div className="min-h-[calc(100vh-150px)]">
         <Outlet></Outlet>
+        </div>
+        <Footer></Footer>
     
     </div>
   )
 }
 
-export default Mainlayout
+export default Mainlayout;

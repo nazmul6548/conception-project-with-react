@@ -11,6 +11,7 @@ import Blogpage from './pages/Blogpage.jsx';
 import Bookmark from './pages/Bookmark.jsx';
 import Home from './pages/Home.jsx';
 import Mainlayout from './components/Mainlayout/Mainlayout.jsx';
+import Homepage from './pages/Homepage.jsx';
 
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: "/",
     element:<Mainlayout></Mainlayout>,
     children:[
+      {
+        path:"/",
+        element:<Homepage></Homepage>
+      },
       {
         path:"/blog/",
         element:<Blogpage></Blogpage>
