@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData} from "react-router-dom";
+import { MdBookmarkAdd } from "react-icons/md";
+
 
 function Blog() {
   const blog = useLoaderData();
+  
   const [tabIndex,setIndex] = useState(0);
   const {
     comments_count,
@@ -12,7 +15,7 @@ function Blog() {
     published_at,
     tags
   } = blog;
-  console.log(blog);
+  
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
       <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
@@ -82,6 +85,10 @@ function Blog() {
               <span>Author</span>
               
             </Link>
+
+           <div className="bg-primary p-3 rounded-full text-3xl ml-4 hover:bg-opacity-30 bg-opacity-20 hover:scale-100 overflow-hidden">
+           <MdBookmarkAdd size={20} className="text-secondary  cursor-pointer" />
+           </div>
            
           </div>
           {/*  */}

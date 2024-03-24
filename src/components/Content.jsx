@@ -13,7 +13,7 @@ function Content() {
 
     <div
                 
-                className=" mx-auto p-2 group transition border-2 border-primary hover:scale-105 hover:border-secondary border-opacity-30  hover:no-underline focus:no-underline dark:bg-gray-900"
+                className=" mx-auto p-2 group  border-2 border-primary   border-opacity-30  hover:no-underline focus:no-underline dark:bg-gray-900"
     
               >
                 <img
@@ -26,8 +26,8 @@ function Content() {
 <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
         {
           tags.map(tag => <a key={tag}
-            rel="noopener noreferrer"
-            href="#"
+            // rel="noopener noreferrer"
+            // href="#"
             className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
           >
           #{tag}
@@ -52,6 +52,7 @@ function Content() {
                   </p> */}
                   {/* <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown> */}
                  <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+                 
                 </div>
               </div>
     
