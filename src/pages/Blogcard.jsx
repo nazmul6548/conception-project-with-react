@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom"
-
+import placeholdrimg from '../assets/404.jpg'
 
 function Blogcard({blog}) {
+  const {cover_image,title,id,description,published_at} = blog
   return (
     <div>
 
-<Link to="/"
+<Link to={`/blog/${id}`}
             
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50"
+            className="max-w-sm mx-auto group transition border-2 border-primary hover:scale-105 hover:border-secondary border-opacity-30  hover:no-underline focus:no-underline dark:bg-gray-900"
+
           >
             <img
               role="presentation"
               className="object-cover w-full rounded h-44 dark:bg-gray-500"
-              src="https://source.unsplash.com/random/480x360?1"
+              src={cover_image || placeholdrimg}
             />
             <div className="p-6 space-y-2">
               <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
+                {title}
               </h3>
-              <span className="text-xs dark:text-gray-600">
-                January 21, 2021
+              <span className="text-xs dark:text-gray-400">
+                {' '}
+                {new Date (published_at).toLocaleDateString()}
               </span>
               <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
+               {description}
               </p>
             </div>
           </Link>
