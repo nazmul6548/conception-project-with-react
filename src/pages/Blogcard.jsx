@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom"
 import placeholdrimg from '../assets/404.jpg'
+import { MdAutoDelete } from "react-icons/md";
 
-function Blogcard({blog}) {
+
+function Blogcard({blog,deletable,handledelete}) {
   const {cover_image,title,id,description,published_at} = blog
+ 
   return (
+   <div className="flex relative">
     <div>
 
 <Link to={`/blog/${id}`}
@@ -32,6 +36,12 @@ function Blogcard({blog}) {
 
 
     </div>
+    {
+      deletable && <div onClick={() => handledelete(id)} className="absolute bg-primary p-3 rounded-full hover:scale-105 -top-0 -right-0">
+      <MdAutoDelete size={20}  className="text-secondary group-hover:text-primary"/>
+    </div>
+    }
+   </div>
   )
 }
 

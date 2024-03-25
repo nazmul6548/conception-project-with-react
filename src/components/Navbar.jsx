@@ -22,13 +22,13 @@ function Navbar() {
 
 
   return (
-    <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8 fixed z-10">
+    <div className="navbar bg-base-100 flex flex-col md:flex-row shadow-lg px-4 sm:px-8 fixed z-10">
       <div className="flex-1 ">
         <Link to="/" className="btn btn-ghost text-secondary font-bold gap-0 normal-case text-3xl">Tech<span className="text-primary">Universe</span></Link>
       
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 hidden sm:flex gap-10 mr-5">
+        <ul className="menu menu-horizontal px-1  sm:flex gap-10 mr-5">
           {/* <li className="font-bold"> */}
           
             <NavLink to="/" className={({isActive}) => isActive ? "text-primary font-bold" : "font-bold"}>Home</NavLink>
